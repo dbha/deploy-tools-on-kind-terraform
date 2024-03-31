@@ -1,7 +1,10 @@
 # Deploy DevOps Tool Chain on Kind Cluster with Terraform
 
-## Creating a kind cluster
+## Overview
+This repository provides simple examples of how to automatically install DevOps tools using Terraform.
 
+
+## Install kind CLI
 To install kind you can follow the official docs:
 https://kind.sigs.k8s.io/docs/user/quick-start
 
@@ -9,6 +12,7 @@ https://kind.sigs.k8s.io/docs/user/quick-start
 ## Install Terraform CLI
 To install terraform CLI, you can use this docs:
 https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+
 
 ## Install Kubectl CLI
 https://kubernetes.io/ko/docs/tasks/tools/
