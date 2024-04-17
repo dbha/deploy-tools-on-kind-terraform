@@ -16,9 +16,6 @@ resource "helm_release" "ingress_nginx" {
   ]
 }
 
-# A null_resource is a resource that does not perform any specific creation, modification, or destruction operations, in effect doing nothing.
-# However, It can be used to perform secondary tasks or control the creation order of other resources, 
-# such as through provisioners or setting dependencies with other resources (depends_on).
 resource "null_resource" "wait_for_ingress_nginx" {
   triggers = {
     key = uuid()
