@@ -54,4 +54,28 @@ variable "jenkins_namespace" {
   default     = "jenkins"
 }
 
+variable "vault_helm_version" {
+  type        = string
+  description = "The Helm version for the vault."
+  default     = "0.28.0"
+}
+
+variable "vault_namespace" {
+  type        = string
+  description = "The vault namespace (it will be created if needed)."
+  default     = "vault"
+}
+
+variable "grafana_helm_version" {
+  type        = string
+  description = "The Helm version for the grafana."
+  default     = "2.10.2"
+}
+
+variable "grafana_namespace" {
+  type        = string
+  description = "The monitoring namespace (it will be created if needed)."
+  default     = "monitoring"
+}
+
 
