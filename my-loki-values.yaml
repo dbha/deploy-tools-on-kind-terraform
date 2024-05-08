@@ -3,10 +3,15 @@
 #   image: bats/bats:1.8.2
 #   pullPolicy: IfNotPresent
 
-
+ 
 loki:
   enabled: true
   isDefault: true
+  auth_enabled: false
+  commonConfig:
+    replication_factor: 1
+  storage:
+    type: 'filesystem'
 #   url: http://{{(include "loki.serviceName" .)}}:{{ .Values.loki.service.port }}
 #   readinessProbe:
 #     httpGet:
@@ -41,6 +46,15 @@ promtail:
     serverPort: 3101
     clients:
       - url: http://grafana-loki:3100/loki/api/v1/push
+    snippets:
+    scrapeConfigs: |
+      - job_name: audit-logs
+        static_configs:
+          - targets:
+              - localhost
+            labels:
+              job: audit-logs
+              __path__: /var/log/kubernetes/**/*.log  
 
 # promtail:
 #   config:

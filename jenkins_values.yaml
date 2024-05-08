@@ -39,7 +39,7 @@ controller:
     repository: "jenkins/jenkins"
 
     # -- Controller image tag override; i.e., tag: "2.440.1-jdk17"
-    tag:
+    tag: 2.440.3-jdk17
 
     # -- Controller image tag label
     tagLabel: jdk17
@@ -117,8 +117,9 @@ controller:
       cpu: "50m"
       memory: "256Mi"
     limits:
-      cpu: "2000m"
-      memory: "4096Mi"
+      cpu: "1000m"
+      memory: "2048Mi"
+      # memory: "4096Mi"
 
   # Share process namespace to allow sidecar containers to interact with processes in other containers in the same pod
   shareProcessNamespace: false
